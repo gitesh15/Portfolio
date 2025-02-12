@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+/* style.css */
+
+/* Default to light theme */
+:root {
+  --background-color: white;
+  --text-color: black;
+  --button-background: #0073e6;
+  --button-hover: #005bb5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Dark theme overrides */
+.dark-theme {
+  --background-color: #181818;
+  --text-color: white;
+  --button-background: #3a3a3a;
+  --button-hover: #555;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Light theme overrides */
+.light-theme {
+  --background-color: white;
+  --text-color: black;
+  --button-background: #0073e6;
+  --button-hover: #005bb5;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* General styles */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+}
+
+button {
+  background-color: var(--button-background);
   color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: var(--button-hover);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: var(--button-background);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
 }
